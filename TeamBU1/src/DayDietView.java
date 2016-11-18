@@ -20,7 +20,7 @@ public class DayDietView extends JPanel implements Observer {
         this.model = model;
     }
 
-    
+
 
     @Override
     public void update(Observable observable, Object o) {

@@ -8,22 +8,13 @@ import javax.swing.JPanel;
 
 
 
-public class AgeGroup {
+public class AgeGroup extends JFrame {
 
 	private static JFrame detailsFrame;
 	private static JPanel detailsPanel;
-	
 
-	
-		
 
-	
-	
-	
-
-	
-
-	public static void main(String[] args) {
+	public AgeGroup (){
 		
 		detailsPanel = new JPanel();
 		detailsPanel.setBackground(Color.LIGHT_GRAY);
@@ -60,10 +51,7 @@ public class AgeGroup {
 		detailsFrame.setLocationRelativeTo(null);
 		detailsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		detailsFrame.setVisible(true);
-	
-	
-	
-		
+
 	}
 	
 }
