@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 
 /**
@@ -10,9 +11,29 @@ import javax.swing.*;
 public class DayDietComp extends JPanel {
 
     public DayDietComp(DayDiet dayDiet) {
+       // Initialize model
         DayDietModel model = new DayDietModel(dayDiet);
-        DayDietView view = new DayDietView(model);
-        InputPanel buttonPanel = new InputPanel(model);
 
+        // initialize panel
+        DayDietView view = new DayDietView(model);
+        InputPanel inputPanel = new InputPanel(model);
+        ButtonPanel buttonPanel = new ButtonPanel(model);
+
+        // Connect panels to model
+        model.addObserver(view);
+        model.addObserver(inputPanel);
+        model.addObserver(buttonPanel);
+
+        // Add to model
+        model.addObserver(view);
+        model.addObserver(inputPanel);
+        model.addObserver(buttonPanel);
+
+        // Position
+        setLayout(new BorderLayout());
+        add(view, BorderLayout.SOUTH);
+        // add(, BorderLayout.SOUTH);
+        add(inputPanel, BorderLayout.NORTH);
+        add(buttonPanel, BorderLayout.EAST);
     }
 }

@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.*;
 import javax.swing.*;
 import java.io.*;
@@ -49,6 +51,20 @@ public class homeGUI {
 		btnDaily.setBounds(200, 500, 80, 20);
 		btnDaily.setVisible(true);
 		btnDaily.setText("Daily");
+		btnDaily.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent actionEvent) {
+				DayDiet dayDiet = new DayDiet();
+				frame.setSize(900,600);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				DayDietComp comp = new DayDietComp(dayDiet);
+				frame.add(comp);
+				//frame.add(view);
+				frame.setVisible(true);
+				lblInfo.setVisible(false);
+				btnDaily.setVisible(false);
+			}
+		});
 		
 		paneMain.add(lblInfo);
 		lblInfo.setBounds(120, 80, 300, 30);

@@ -9,6 +9,13 @@ public class DayDiet {
     private Meal meals[];
 
     /**
+     * default empty Constructor
+     */
+    public DayDiet() {
+        this.country = "";
+        this.meals = new Meal[4];
+    }
+    /**
      * Constructor
      * @param country Country of Residence
      */
