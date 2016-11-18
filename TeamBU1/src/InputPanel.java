@@ -5,4 +5,7 @@
  * @author rmb481@cs.bham.ac.uk
  */
 public class InputPanel {
+    public InputPanel(DayDietModel model) {
+
+    }
 }
