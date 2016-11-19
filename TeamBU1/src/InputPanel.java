@@ -11,16 +11,15 @@ public class InputPanel extends JPanel implements Observer {
     private String countrySelection;
 
     public InputPanel(DayDietModel model) {
-    	setLayout(null);
+    	//setLayout(null);
     	
     	JLabel lblNewLabel = new JLabel("Country");
-    	lblNewLabel.setBounds(104, 57, 61, 16);
+    	//lblNewLabel.setBounds(104, 57, 61, 16);
     	lblNewLabel.setVisible(true);
     	this.add(lblNewLabel);
     	
         Vector countryItems = new Vector();
         Vector foodItems = new Vector();
-        
         Connection c = null;
         Statement stmt = null;
         try {
@@ -42,7 +41,8 @@ public class InputPanel extends JPanel implements Observer {
           System.exit(0);
         }
 
-        JComboBox countryComboBox = new JComboBox(countryItems);
+        final DefaultComboBoxModel countryComboModel = new DefaultComboBoxModel(countryItems);
+        JComboBox countryComboBox = new JComboBox(countryComboModel);
     	countryComboBox.setBounds(183, 53, 110, 27);
     	countryComboBox.setVisible(true);
     	this.add(countryComboBox);
