@@ -2,34 +2,50 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Vector;
+import java.sql.*;
 
-
-/**
- * codeForGood
- * Created by riddle on 11/18/16.
- *
- * @author rmb481@cs.bham.ac.uk
- */
 public class InputPanel extends JPanel implements Observer {
-    private JComboBox country;
+   // private JComboBox country;
     private JComboBox meal;
-    private JComboBox portion;
+    private String countrySelection;
 
     public InputPanel(DayDietModel model) {
-        this.country = new JComboBox<String>();
-        this.meal = new JComboBox<String>();
-        this.portion = new JComboBox<String>();
-
-        JLabel labelCountry = new JLabel("Country of Residence");
-        JLabel labelMeal = new JLabel("Enter the meal");
-        JLabel labelportion = new JLabel("Enter the size of the portion");
-
-        this.add(labelCountry);
-        this.add(country);
-        this.add(labelMeal);
-        this.add(meal);
-        this.add(labelportion);
-        this.add(portion);
+    	setLayout(null);
+    	
+    	JLabel lblNewLabel = new JLabel("Country");
+    	lblNewLabel.setBounds(104, 57, 61, 16);
+    	lblNewLabel.setVisible(true);
+    	this.add(lblNewLabel);
+    	
+        Vector countryItems = new Vector();
+        Vector foodItems = new Vector();
+        
+        Connection c = null;
+        Statement stmt = null;
+        try {
+          Class.forName("org.sqlite.JDBC");
+          c = DriverManager.getConnection("jdbc:sqlite:/Users/adamglynn/Documents/Bournemouth University/CostOfDiet.db3");
+          stmt = c.createStatement();
+          ResultSet rs = stmt.executeQuery( "SELECT * FROM Country;" );
+         
+          
+          while ( rs.next() ) {
+             String name = rs.getString("Name");
+             System.out.println( "Name = " + name );
+             countryItems.add(name);
+             System.out.println();
+          }
+          rs.close();
+        } catch ( Exception e ) {
+          System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+          System.exit(0);
+        }
+        JComboBox countryComboBox = new JComboBox(countryItems);
+    	countryComboBox.setBounds(183, 53, 110, 27);
+    	countryComboBox.setVisible(true);
+    	this.add(countryComboBox);
+        
 
     }
 
