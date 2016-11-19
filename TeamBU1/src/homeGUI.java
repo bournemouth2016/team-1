@@ -8,7 +8,6 @@ import java.io.*;
 
 public class homeGUI {
 
-	
 	//Main variables
 	static JFrame frame;
 	static JPanel panel;

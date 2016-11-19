@@ -1,6 +1,8 @@
 import javax.swing.*;
+import java.awt.*;
 import java.util.Observable;
 import java.util.Observer;
+
 
 /**
  * codeForGood
@@ -10,25 +12,22 @@ import java.util.Observer;
  */
 public class InputPanel extends JPanel implements Observer {
     private JComboBox country;
-    private JComboBox Meal;
+    private JComboBox meal;
     private JComboBox portion;
 
     public InputPanel(DayDietModel model) {
         this.country = new JComboBox<String>();
-        this.Meal = new JComboBox<String>();
+        this.meal = new JComboBox<String>();
         this.portion = new JComboBox<String>();
 
         JLabel labelCountry = new JLabel("Country of Residence");
-        JLabel labelMeal = new JLabel("Enter the Meal");
+        JLabel labelMeal = new JLabel("Enter the meal");
         JLabel labelportion = new JLabel("Enter the size of the portion");
-
-        
-        // add these
 
         this.add(labelCountry);
         this.add(country);
         this.add(labelMeal);
-        this.add(Meal);
+        this.add(meal);
         this.add(labelportion);
         this.add(portion);
 
