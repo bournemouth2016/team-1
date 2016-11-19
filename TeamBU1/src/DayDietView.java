@@ -24,6 +24,5 @@ public class DayDietView extends JPanel implements Observer {
 
     @Override
     public void update(Observable observable, Object o) {
-        repaint();
     }
 }

@@ -25,7 +25,7 @@ public class InputPanel extends JPanel implements Observer {
         Statement stmt = null;
         try {
           Class.forName("org.sqlite.JDBC");
-          c = DriverManager.getConnection("jdbc:sqlite:/Users/adamglynn/Documents/Bournemouth University/CostOfDiet.db3");
+          c = DriverManager.getConnection("jdbc:sqlite:TeamBU1/CostOfDiet.db3");
           stmt = c.createStatement();
           ResultSet rs = stmt.executeQuery( "SELECT * FROM Country;" );
          
@@ -41,6 +41,7 @@ public class InputPanel extends JPanel implements Observer {
           System.err.println( e.getClass().getName() + ": " + e.getMessage() );
           System.exit(0);
         }
+
         JComboBox countryComboBox = new JComboBox(countryItems);
     	countryComboBox.setBounds(183, 53, 110, 27);
     	countryComboBox.setVisible(true);

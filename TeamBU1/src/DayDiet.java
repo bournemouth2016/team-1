@@ -7,13 +7,14 @@
 public class DayDiet {
     private String country;
     private Meal meals[];
+    private static int NUMBER_MEALS = 1;
 
     /**
      * default empty Constructor
      */
     public DayDiet() {
         this.country = "";
-        this.meals = new Meal[4];
+        this.meals = new Meal[NUMBER_MEALS];
     }
     /**
      * Constructor
@@ -21,7 +22,7 @@ public class DayDiet {
      */
     public DayDiet(String country){
         this.country = country;
-        this.meals = new Meal[4];
+        this.meals = new Meal[NUMBER_MEALS];
     }
 
     public void setMeal(String food, int portionSize, int index){
