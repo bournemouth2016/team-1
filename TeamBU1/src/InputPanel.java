@@ -63,7 +63,7 @@ public class InputPanel extends JPanel implements Observer {
         int i = 0;
         while (i <= 50) {
             numItems.add(i);
-            i++;
+            i+=5;
         }
 
         try {
