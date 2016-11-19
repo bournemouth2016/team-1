@@ -49,7 +49,7 @@ public class AgeGroup extends JFrame {
 		detailsFrame.getContentPane().add(detailsPanel);
 		detailsFrame.setResizable(false);
 		detailsFrame.setLocationRelativeTo(null);
-		detailsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//detailsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		detailsFrame.setVisible(true);
 
 	}

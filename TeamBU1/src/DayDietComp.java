@@ -33,7 +33,7 @@ public class DayDietComp extends JPanel {
         setLayout(new BorderLayout());
         add(view, BorderLayout.SOUTH);
         // add(, BorderLayout.SOUTH);
-        add(inputPanel, BorderLayout.NORTH);
+        add(inputPanel, BorderLayout.WEST);
         add(buttonPanel, BorderLayout.EAST);
     }
 }
