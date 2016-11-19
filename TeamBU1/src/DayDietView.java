@@ -14,10 +14,15 @@ import java.util.Observer;
 
 public class DayDietView extends JPanel implements Observer {
     private DayDietModel model;
+    private JTextArea resultArea;
+
 
     public DayDietView (DayDietModel model) {
         super();
         this.model = model;
+        resultArea = new JTextArea("This is text", 30, 10);
+        resultArea.setVisible(true);
+        this.add(resultArea);
     }
 
 
